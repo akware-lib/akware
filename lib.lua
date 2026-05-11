@@ -134,8 +134,8 @@ function library:new(props)
         Parent          = cre
     })
 
-    if check_exploit == "Synapse" and syn and syn.request then
-        syn.protect_gui(screen)
+    if protectgui then
+        protectgui(screen)
     end
 
     local outline = utility.new("Frame", {
