@@ -314,9 +314,9 @@ function library:page(props)
     local label=utility.new("TextLabel",{BackgroundTransparency=1,Size=UDim2.new(1,0,0,20),Position=UDim2.new(0,0,0,0),Font=self.font,Text=name,TextColor3=Color3.fromRGB(255,255,255),TextSize=self.textsize,TextStrokeTransparency=0,Parent=outline})
 
     local pageholder=utility.new("Frame",{AnchorPoint=Vector2.new(0.5,0.5),BackgroundTransparency=1,Size=UDim2.new(1,-20,1,-20),Position=UDim2.new(0.5,0,0.5,0),Visible=false,Parent=self.tabs})
-    local left=utility.new("ScrollingFrame",{BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2.new(0.5,-5,1,0),Position=UDim2.new(0,0,0,0),AutomaticCanvasSize="Y",CanvasSize=UDim2.new(0,0,0,0),ScrollBarImageTransparency=1,ScrollBarThickness=0,ClipsDescendants=false,VerticalScrollBarInset="None",VerticalScrollBarPosition="Right",Parent=pageholder})
+    local left=utility.new("ScrollingFrame",{BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2.new(0.5,-5,1,0),Position=UDim2.new(0,0,0,0),AutomaticCanvasSize="Y",CanvasSize=UDim2.new(0,0,0,0),ScrollBarImageTransparency=0.6,ScrollBarImageColor3=Color3.fromRGB(80,80,80),ScrollBarThickness=4,ClipsDescendants=true,VerticalScrollBarInset="None",VerticalScrollBarPosition="Right",Parent=pageholder})
     utility.new("UIListLayout",{FillDirection="Vertical",Padding=UDim.new(0,10),Parent=left})
-    local right=utility.new("ScrollingFrame",{AnchorPoint=Vector2.new(1,0),BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2.new(0.5,-5,1,0),Position=UDim2.new(1,0,0,0),AutomaticCanvasSize="Y",CanvasSize=UDim2.new(0,0,0,0),ScrollBarImageTransparency=1,ScrollBarThickness=0,ClipsDescendants=false,VerticalScrollBarInset="None",VerticalScrollBarPosition="Right",Parent=pageholder})
+    local right=utility.new("ScrollingFrame",{AnchorPoint=Vector2.new(1,0),BackgroundTransparency=1,BorderSizePixel=0,Size=UDim2.new(0.5,-5,1,0),Position=UDim2.new(1,0,0,0),AutomaticCanvasSize="Y",CanvasSize=UDim2.new(0,0,0,0),ScrollBarImageTransparency=0.6,ScrollBarImageColor3=Color3.fromRGB(80,80,80),ScrollBarThickness=4,ClipsDescendants=true,VerticalScrollBarInset="None",VerticalScrollBarPosition="Right",Parent=pageholder})
     utility.new("UIListLayout",{FillDirection="Vertical",Padding=UDim.new(0,10),Parent=right})
 
     page={library=self,outline=outline,r_line=r_line,l_line=l_line,line=line,page=pageholder,left=left,right=right,open=false,pointers={}}
@@ -465,11 +465,6 @@ function multisections:section(props)
     setmetatable(mssection,mssections)
     return mssection
 end
-
--- ─────────────────────────────────────────────
--- All sections controls — defined once on sections,
--- then copied to mssections AFTER all methods are defined (end of file).
--- ─────────────────────────────────────────────
 
 -- // Toggle
 
